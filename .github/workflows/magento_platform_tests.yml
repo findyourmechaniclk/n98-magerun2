@@ -50,6 +50,7 @@ jobs:
       MariaDB ${{ matrix.mariadb-version }} /
       ${{ matrix.opensearch-version && 'OpenSearch' || 'Elasticsearch' }})
     runs-on: ${{ matrix.operating-system }}
+    timeout-minutes: 120
     # Fork PRs from non-collaborators must be approved via the 'external-contribution'
     # environment (required reviewer) before this job's secrets and PR checkout run.
     # Trusted events (push/workflow_dispatch, or PRs from collaborators/members/owners),
